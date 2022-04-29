@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
+html{
+    cursor: url("./menu/curser.cur"),auto;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+}
+
+
+body{
+    font-family: 'Slackey', cursive;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/Background/BG2.png);
+    background-size: cover;
+    background-position: center;
+    /* animation-name: backAnimation; */
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: center;
+    z-index: 0; 
+}
+
+
+.start{
+    background-color: rgba(0, 0, 0, 0.618);
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.9s ease-out;
+    animation-duration: 0.6s;
+    
+
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    z-index: 1;
+    transition: top 0.6s ease-out;
+}
+
+.hangmanLogo{
+    height: 60vh;
+    z-index: 1;
+}
+
+.startBtn{
+   position: absolute;
+   height: 20vh;
+   top: calc(51vh);
+}
+
+.background{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+
+
+
+/* Start========================================================== */
+
+
+.letterSection{
+    position: absolute;
+    top: 0px;
+    padding: 0 10vw;
+    width: 100vw;
+    height: 35vh;
+    display: grid;
+    grid-template-columns: 140px auto 140px;
+    overflow: hidden;
+    position: relative;
+    transition: top 0.6s ease-out;
+
+}
+
+
+.left{
+    background-image: url('/assets/sign-left.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+
+.middle{
+    background-image: url('/assets/sign-middle.png');
+    background-repeat: no-repeat;
+    background-size: 100% 35vh;
+    background-position: left;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    padding-bottom: 5vh;
+    position: relative;
+}
+
+
+.letters{
+    position: absolute;
+    display: grid;
+    width: 100%;
+    grid-template-columns:repeat(13, 100px);
+    grid-template-rows:repeat(2, 50px);
+    justify-content: space-evenly;
+    grid-row-gap: 50px;
+}
+
+.letters div{
+    color: #ffffff;
+    text-align: center;
+    margin: auto 0;
+    font-size: 3rem;
+    border-radius: 9px;
+    border: solid 0.5px wheat;
+    transition: all 0.2s ease-in-out;
+}
+
+.letters div:hover{
+    color: rgb(187, 77, 77);
+    background-color: white;
+    font-size: 4rem;
+}
+
+.letters div.used{
+    color: #ffffff3b;
+    text-align: center;
+    margin: auto 0;
+    font-size: 3rem;
+    border-radius: 9px;
+    border: solid 0.5px rgba(245, 222, 179, 0.274);
+    transition: all 0.2s ease-in-out;
+}
+.letters div.used:hover{
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 3rem;
+}
+
+
+.right{
+    background-image: url('/assets/sign-right.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+}
+
+/* End Of Letter Section ================ */
+
+
+.wordSection{
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.6s ease-out;
+}   
+.wordSection p {
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 4rem;
+    font-size: 2rem;
+    padding: 10px 20px 10px 70px;
+    background-color: rgba(117, 83, 49, 0.87);
+    border-radius: 25px;
+    border: solid 5px rgb(93, 60, 28);
+    transition: all 0.6s ease-out;
+
+}
+
+.characterSection{
+    position: absolute;
+    width: 100vw;
+    height: 50vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s ease-out;
+}
+
+.characterSection img{
+    width: 65%;
+    height: 100%;
+}
+
+
+
+
+
+/* End======================================================== */
+
+
+
+.letters-part{
+    
+    width: 70vw;
+    display: grid;
+    position: absolute;
+    transform: translate(-5%);
+    transition: top 0.6s ease-out;
+    grid-template-columns: 50px auto 50px;
+    height: 30vh;
+}
+
+.leftSide{
+    background-image: url(/assets/sign-left.png);
+    background-size: 50px 30vh ;
+    background-repeat: no-repeat;
+
+}
+
+.rightSide{
+    background-image: url(/assets/sign-right.png);
+    background-size: 50px 30vh ;
+    background-repeat: no-repeat;
+}
+.middleSide{
+    background-image: url(/assets/sign-middle.png);
+    background-size: 100% 30vh;
+    background-repeat: no-repeat;
+}
+
+/* 
+#letters{
+    margin-top:16vh ;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 70vw;
+    height: 10vh;
+    justify-content: center;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-row-gap: 15px;
+    grid-template-columns: repeat(13 , minmax(20px,1fr));
+    grid-template-rows: repeat(2 , minmax(30px,1fr));
+    
+} */
+
+/* #letters div{
+    color: #ffffff;
+    text-align: center;
+    margin: auto 0;
+    font-size: 3rem;
+    border-radius: 9px;
+    border: solid 0.5px wheat;
+    transition: all 0.2s ease-in-out;
+} */
+
+
+#letters div:hover{
+    color: rgb(187, 77, 77);
+    background-color: white;
+    font-size: 3.5rem;
+}
+
+
+
+
+
+@keyframes backAnimation {
+    20%{
+        background-image: url(/Background/BG2.png);
+    }
+    22%{
+        background-image: url(/Background/BG1.png);
+    }
+    35%{
+        background-image: url(/Background/BG2.png);
+    }
+    50%{
+        background-image: url(/Background/BG1.png);
+    }
+    75%{
+        background-image: url(/Background/BG2.png);
+    }
+    78%{
+        background-image: url(/Background/BG1.png);
+    }
+    85%{
+        background-image: url(/Background/BG2.png);
+    }
+    100%{
+        background-image: url(/Background/BG1.png);
+    }
+}
+
+
+

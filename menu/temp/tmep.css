@@ -1,0 +1,37 @@
+
+
+
+
+.main{
+    width: 80vw;
+    /* background-color: rebeccapurple; */
+    height: 200px;
+    margin: 0 auto;
+}
+
+
+.grid{
+    display: grid;
+    grid-template-columns: 50px minmax(300px , auto) 50px;
+}
+
+.right{
+    background-image: url(/assets/sign-right.png);
+    background-size: cover;
+    height: 20vh;
+}
+
+.middle{
+    background-image: url(/assets/sign-middle.png);
+    background-size: 100% 200px ;
+    height: 20vh;
+
+}
+
+.left{
+    /* background-color: purple; */
+    background-image: url(/assets/sign-left.png);
+    background-size: cover;
+
+    height: 20vh;
+}
